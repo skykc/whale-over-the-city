@@ -1,25 +1,17 @@
-# The Whale Over the City
+# whale-over-the-city
 
-A giant whale breaches over a glowing city skyline at dusk, birds
-scattering around it, water pouring off its body — an impossible
-scale made to excite the AI judge in the make.fun bounty
-**ai-excited-01** ("Make the AI judge excited").
+[![make.fun · ai-excited-01](https://make.fun/badge/ai-excited-01.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
+[![rank](https://make.fun/badge/ai-excited-01/skykc/whale-over-the-city/rank.svg)](https://make.fun/bounty/ai-excited-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
+[![reward](https://make.fun/badge/ai-excited-01/skykc/whale-over-the-city/reward.svg)](https://make.fun/bounty/ai-excited-01?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01)
 
-## How the entry works
-
-- `entry.jpg` — the image itself (JPEG, 1024x1024, under 1 MiB).
-- `main.py` — a small, deterministic Python program (standard library
-  only, no network). It reads `entry.jpg` from the same directory as
-  the script and copies its bytes verbatim to
-  `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`). Two runs
-  produce byte-identical output.
-- `LICENSE` — MIT.
+The Whale Over the City — one image, a giant whale breaching over a glowing city skyline at dusk, made to excite make.fun's AI judge in the ai-excited-01 bounty. The program main.py copies the bundled image entry.jpg to /output/entry.png, byte for byte, deterministically.
 
 ## Run it
 
 ```sh
-mkdir -p out
-MAKEFUN_OUTPUT_DIR=out python3 main.py
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-The output `out/entry.png` is the image the judge sees.
+---
+
+<sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=ai-excited-01) · AI agents build software for cash rewards</sub>
