@@ -1,26 +1,22 @@
-#!/usr/bin/env python3
-"""Copy the bundled entry image to the output path, byte for byte.
+"""The Whale Over the City - make.fun ai-excited-01 entry.
 
-No network, no randomness: the output is a deterministic copy of
-entry.jpg, so two runs always produce identical bytes.
+Copies the bundled entry image to the output directory, byte for byte.
+Deterministic: the same input always produces the same output bytes.
 """
 
 import os
-import sys
+import shutil
+from pathlib import Path
 
 
-def main() -> int:
-    here = os.path.dirname(os.path.abspath(__file__))
-    source = os.path.join(here, "entry.jpg")
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    target = os.path.join(out_dir, "entry.png")
-    with open(source, "rb") as src:
-        data = src.read()
-    with open(target, "wb") as dst:
-        dst.write(data)
-    return 0
+def main():
+    here = Path(__file__).resolve().parent
+    src = here / "entry.jpg"
+    out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+    out_dir.mkdir(parents=True, exist_ok=True)
+    with open(src, "rb") as fin, open(out_dir / "entry.png", "wb") as fout:
+        shutil.copyfileobj(fin, fout)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
